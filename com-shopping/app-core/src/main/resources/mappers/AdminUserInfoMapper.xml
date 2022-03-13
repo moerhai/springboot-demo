@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mohai.one.app.core.user.dao.AdminUserInfoMapper">
+    <resultMap id="BaseResultMap" type="com.mohai.one.app.core.user.domain.AdminUserInfo">
+        <id property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="salt" column="salt" jdbcType="VARCHAR"/>
+        <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="CHAR"/>
+        <result property="status"  column="status"  jdbcType="BIT"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="createTime"  column="create_time"  jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        user_id, username, password, salt, mobile, email, type, status, create_time, update_time
+    </sql>
+    <select id="findByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from admin_user
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
+</mapper>

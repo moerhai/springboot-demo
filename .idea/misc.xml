@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/first-spring-boot/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-aop/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-application/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-batch/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-cache/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-cache-ehcache/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-cache-redis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-controlleradvice/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-cors/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-data-jdbc/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-data-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-data-mongodb/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-data-redis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-data-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-druid/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-dubbo-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-errorview/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-fileupload/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-freemarker/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-h2database/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-hadoop-hbase/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-hikaricp/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-jdbctemplate/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-jetty/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-log4j2/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-logback/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-lombok/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-message/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-multisource/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mvc/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mvc-fastjson/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-profile/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-properties/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-restdocs/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-runner/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-scheduled/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-scheduled-quartz/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-scheduled-quartzbatch/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-security/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-security-dynamic/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-security-oauth/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-servlet/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-staticview/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-swagger/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-thymeleaf/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-tomcat/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-transaction/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-undertow/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-velocity/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-security-oauth/authorization-code/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-security-oauth/client-credentials-grant/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-security-oauth/implicit-grant/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-security-oauth/oauth2-sso-client-order/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-security-oauth/oauth2-sso-client-product/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-security-oauth/oauth2-sso-server/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-security-oauth/resource-owner-password-credentials-grant/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-message/springboot-activemq/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-message/springboot-amqp/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-message/springboot-artemis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-message/springboot-kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-message/springboot-rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-message/springboot-rocketmq/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-message/springboot-rocketmq/rocketmq-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-message/springboot-rocketmq/rocketmq-produce/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

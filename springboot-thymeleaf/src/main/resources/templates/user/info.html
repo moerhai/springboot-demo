@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--指明是Thymeleaf 命名空间，通过引入该命名空间-->
+<!--就可以在HTML 文件中使用Thymeleaf 标签语言，用关键字“ th” 来标注。-->
+<head>
+    <meta charset="UTF-8">
+    <title>User Info</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+    </tr>
+    <tr>
+        <td th:text="${user.realName}"></td>
+        <td th:text="${user.age}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mohai.one.app.wares.dao.AppProdMapper">
+  <resultMap id="BaseResultMap" type="com.mohai.one.app.wares.domain.AppProd">
+    <constructor>
+      <idArg column="pro_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="pro_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pro_type" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="pro_oriprice" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="pro_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="pro_brief" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pro_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pro_sold_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="pro_total_stocks" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="pro_status" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="pro_putaway_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="create_user" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_user" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.mohai.one.app.wares.domain.AppProd">
+    <constructor>
+      <idArg column="pro_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="pro_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pro_type" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="pro_oriprice" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="pro_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="pro_brief" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pro_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pro_sold_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="pro_total_stocks" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="pro_status" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="pro_putaway_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="category_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="create_user" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_user" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pro_content" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    pro_id, pro_name, pro_type, pro_oriprice, pro_price, pro_brief, pro_pic, pro_sold_num,
+    pro_total_stocks, pro_status, pro_putaway_time, category_id, create_time, create_user,
+    update_time, update_user
+  </sql>
+  <sql id="Blob_Column_List">
+    pro_content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from app_prod
+    where pro_id = #{proId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from app_prod
+    where pro_id = #{proId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mohai.one.app.wares.domain.AppProd">
+    insert into app_prod (pro_id, pro_name, pro_type,
+    pro_oriprice, pro_price, pro_brief,
+    pro_pic, pro_sold_num, pro_total_stocks,
+    pro_status, pro_putaway_time, category_id,
+    create_time, create_user, update_time,
+    update_user, pro_content)
+    values (#{proId,jdbcType=BIGINT}, #{proName,jdbcType=VARCHAR}, #{proType,jdbcType=CHAR},
+    #{proOriprice,jdbcType=DECIMAL}, #{proPrice,jdbcType=DECIMAL}, #{proBrief,jdbcType=VARCHAR},
+    #{proPic,jdbcType=VARCHAR}, #{proSoldNum,jdbcType=INTEGER}, #{proTotalStocks,jdbcType=INTEGER},
+    #{proStatus,jdbcType=CHAR}, #{proPutawayTime,jdbcType=TIMESTAMP}, #{categoryId,jdbcType=BIGINT},
+    #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP},
+    #{updateUser,jdbcType=VARCHAR}, #{proContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mohai.one.app.wares.domain.AppProd">
+    insert into app_prod
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="proId != null">
+        pro_id,
+      </if>
+      <if test="proName != null">
+        pro_name,
+      </if>
+      <if test="proType != null">
+        pro_type,
+      </if>
+      <if test="proOriprice != null">
+        pro_oriprice,
+      </if>
+      <if test="proPrice != null">
+        pro_price,
+      </if>
+      <if test="proBrief != null">
+        pro_brief,
+      </if>
+      <if test="proPic != null">
+        pro_pic,
+      </if>
+      <if test="proSoldNum != null">
+        pro_sold_num,
+      </if>
+      <if test="proTotalStocks != null">
+        pro_total_stocks,
+      </if>
+      <if test="proStatus != null">
+        pro_status,
+      </if>
+      <if test="proPutawayTime != null">
+        pro_putaway_time,
+      </if>
+      <if test="categoryId != null">
+        category_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+      <if test="proContent != null">
+        pro_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="proId != null">
+        #{proId,jdbcType=BIGINT},
+      </if>
+      <if test="proName != null">
+        #{proName,jdbcType=VARCHAR},
+      </if>
+      <if test="proType != null">
+        #{proType,jdbcType=CHAR},
+      </if>
+      <if test="proOriprice != null">
+        #{proOriprice,jdbcType=DECIMAL},
+      </if>
+      <if test="proPrice != null">
+        #{proPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="proBrief != null">
+        #{proBrief,jdbcType=VARCHAR},
+      </if>
+      <if test="proPic != null">
+        #{proPic,jdbcType=VARCHAR},
+      </if>
+      <if test="proSoldNum != null">
+        #{proSoldNum,jdbcType=INTEGER},
+      </if>
+      <if test="proTotalStocks != null">
+        #{proTotalStocks,jdbcType=INTEGER},
+      </if>
+      <if test="proStatus != null">
+        #{proStatus,jdbcType=CHAR},
+      </if>
+      <if test="proPutawayTime != null">
+        #{proPutawayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="categoryId != null">
+        #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="proContent != null">
+        #{proContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mohai.one.app.wares.domain.AppProd">
+    update app_prod
+    <set>
+      <if test="proName != null">
+        pro_name = #{proName,jdbcType=VARCHAR},
+      </if>
+      <if test="proType != null">
+        pro_type = #{proType,jdbcType=CHAR},
+      </if>
+      <if test="proOriprice != null">
+        pro_oriprice = #{proOriprice,jdbcType=DECIMAL},
+      </if>
+      <if test="proPrice != null">
+        pro_price = #{proPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="proBrief != null">
+        pro_brief = #{proBrief,jdbcType=VARCHAR},
+      </if>
+      <if test="proPic != null">
+        pro_pic = #{proPic,jdbcType=VARCHAR},
+      </if>
+      <if test="proSoldNum != null">
+        pro_sold_num = #{proSoldNum,jdbcType=INTEGER},
+      </if>
+      <if test="proTotalStocks != null">
+        pro_total_stocks = #{proTotalStocks,jdbcType=INTEGER},
+      </if>
+      <if test="proStatus != null">
+        pro_status = #{proStatus,jdbcType=CHAR},
+      </if>
+      <if test="proPutawayTime != null">
+        pro_putaway_time = #{proPutawayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="categoryId != null">
+        category_id = #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="proContent != null">
+        pro_content = #{proContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where pro_id = #{proId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.mohai.one.app.wares.domain.AppProd">
+    update app_prod
+    set pro_name = #{proName,jdbcType=VARCHAR},
+    pro_type = #{proType,jdbcType=CHAR},
+    pro_oriprice = #{proOriprice,jdbcType=DECIMAL},
+    pro_price = #{proPrice,jdbcType=DECIMAL},
+    pro_brief = #{proBrief,jdbcType=VARCHAR},
+    pro_pic = #{proPic,jdbcType=VARCHAR},
+    pro_sold_num = #{proSoldNum,jdbcType=INTEGER},
+    pro_total_stocks = #{proTotalStocks,jdbcType=INTEGER},
+    pro_status = #{proStatus,jdbcType=CHAR},
+    pro_putaway_time = #{proPutawayTime,jdbcType=TIMESTAMP},
+    category_id = #{categoryId,jdbcType=BIGINT},
+    create_time = #{createTime,jdbcType=TIMESTAMP},
+    create_user = #{createUser,jdbcType=VARCHAR},
+    update_time = #{updateTime,jdbcType=TIMESTAMP},
+    update_user = #{updateUser,jdbcType=VARCHAR},
+    pro_content = #{proContent,jdbcType=LONGVARCHAR}
+    where pro_id = #{proId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mohai.one.app.wares.domain.AppProd">
+    update app_prod
+    set pro_name = #{proName,jdbcType=VARCHAR},
+    pro_type = #{proType,jdbcType=CHAR},
+    pro_oriprice = #{proOriprice,jdbcType=DECIMAL},
+    pro_price = #{proPrice,jdbcType=DECIMAL},
+    pro_brief = #{proBrief,jdbcType=VARCHAR},
+    pro_pic = #{proPic,jdbcType=VARCHAR},
+    pro_sold_num = #{proSoldNum,jdbcType=INTEGER},
+    pro_total_stocks = #{proTotalStocks,jdbcType=INTEGER},
+    pro_status = #{proStatus,jdbcType=CHAR},
+    pro_putaway_time = #{proPutawayTime,jdbcType=TIMESTAMP},
+    category_id = #{categoryId,jdbcType=BIGINT},
+    create_time = #{createTime,jdbcType=TIMESTAMP},
+    create_user = #{createUser,jdbcType=VARCHAR},
+    update_time = #{updateTime,jdbcType=TIMESTAMP},
+    update_user = #{updateUser,jdbcType=VARCHAR}
+    where pro_id = #{proId,jdbcType=BIGINT}
+  </update>
+
+  <update id="updateProdStatus" parameterType="com.mohai.one.app.wares.domain.AppProd">
+    update app_prod
+    set pro_status = #{proStatus,jdbcType=CHAR},
+    update_time = #{updateTime,jdbcType=DATE},
+    update_user = #{updateUser,jdbcType=VARCHAR}
+    where pro_id = #{proId,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectPageProd" parameterType="com.mohai.one.app.wares.domain.AppProd" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from app_prod
+    <where>
+        <if test="proName != null">
+          and pro_name = #{proName,jdbcType=VARCHAR}
+        </if>
+        <if test="categoryId != null">
+          and category_id = #{categoryId,jdbcType=VARCHAR}
+        </if>
+        <if test="proBrief != null">
+          and pro_brief like  concat('%',#{proBrief,jdbcType=VARCHAR},'%')
+        </if>
+        <if test="proStatus != null">
+          and pro_status = #{proStatus,jdbcType=VARCHAR}
+        </if>
+        <if test="proType != null">
+          and pro_type = #{proType,jdbcType=VARCHAR}
+        </if>
+    </where>
+  </select>
+
+</mapper>

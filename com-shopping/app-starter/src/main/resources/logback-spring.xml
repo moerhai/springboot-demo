@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <!-- 日志级别从低到高分为：
+    TRACE < DEBUG < INFO < WARN < ERROR < FATAL，
+    例如级别设置为WARN，则低于WARN的信息都不会输出 -->
+    <!--定义日志文件的存储路径，请勿在logback的配置中使用相对路径-->
+    <property name="LOG_HOME" value="/home/logs" />
+    <springProperty scope="context" name="logbackLogLevel" source="logback.loglevel"/>
+
+    <!--Mybatis log configure-->
+    <logger name="org.apache.ibatis" level="WARN"/>
+    <logger name="org.mybatis" level="WARN"/>
+    <logger name="java.sql.Connection" level="DEBUG"/>
+    <logger name="java.sql.Statement" level="DEBUG"/>
+    <logger name="java.sql.PreparedStatement" level="DEBUG"/>
+
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.hibernate.validator" level="WARN"/>
+    <logger name="com.sun" level="WARN"/>
+    <logger name="com.zaxxer" level="WARN"/>
+    <logger name="springfox.documentation" level="WARN"/>
+    <logger name="io.netty" level="WARN"/>
+    <logger name="io.lettuce.core" level="WARN"/>
+
+　　 <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+　　　　　<encoder>
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+    　　　　　<!-- 设置字符集 -->
+            <charset>UTF-8</charset>
+        </encoder>
+　　 </appender>
+
+    <!-- 日志输出级别 -->
+　　 <root level="${logbackLogLevel}">
+　　　　　<appender-ref ref="STDOUT" />
+　　 </root>
+</configuration>

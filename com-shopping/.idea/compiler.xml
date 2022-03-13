@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="app-core" />
+        <module name="app-api" />
+        <module name="app-starter" />
+        <module name="app-wares" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="app-api" target="1.8" />
+      <module name="app-core" target="1.8" />
+      <module name="app-starter" target="1.8" />
+      <module name="app-wares" target="1.8" />
+      <module name="com-shopping" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="app-api" options="-parameters" />
+      <module name="app-core" options="-parameters" />
+      <module name="app-starter" options="-parameters" />
+      <module name="app-wares" options="-parameters" />
+      <module name="com-shopping" options="-parameters" />
+    </option>
+  </component>
+</project>

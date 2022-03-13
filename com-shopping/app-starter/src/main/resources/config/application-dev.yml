@@ -1,0 +1,61 @@
+#配置数据源
+spring:
+  devtools:
+    restart:
+      enabled: true  #设置热部署是否生效
+      additional-paths: src/main/java #重启目录
+    livereload:
+      enabled: true #是否出发浏览器刷新
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mohai_shopping?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 10 # 连接池中最小空闲连接数
+      maximum-pool-size: 100 # 连接池中最大连接数
+      idle-timeout: 600000 # 空闲连接数最大存活时间，默认10分钟
+      max-lifetime: 1800000 # 一个连接连接池中存活时间，默认30分钟
+      connection-timeout: 30000 # 数据库连接超时时间，默认30秒
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+  # redis配置
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 60000 # 连接超时时间，单位毫秒
+    ssl: false
+  # 缓存配置
+  cache:
+    type: redis
+    redis:
+      cache-null-values: true
+  session:
+    store-type: redis
+
+# ===========================================
+# System properties
+# ===========================================
+# 用于密码加密传输,前端公钥加密,后端私钥解密
+rsa:
+  private-key: MIIBUwIBADANBgkqhkiG9w0BAQEFAASCAT0wggE5AgEAAkEA0vfvyTdGJkdbHkB8mp0f3FE0GYP3AYPaJF7jUd1M0XxFSE2ceK3k2kw20YvQ09NJKk+OMjWQl9WitG9pB6tSCQIDAQABAkA2SimBrWC2/wvauBuYqjCFwLvYiRYqZKThUS3MZlebXJiLB+Ue/gUifAAKIg1avttUZsHBHrop4qfJCwAI0+YRAiEA+W3NK/RaXtnRqmoUUkb59zsZUBLpvZgQPfj1MhyHDz0CIQDYhsAhPJ3mgS64NbUZmGWuuNKp5coY2GIj/zYDMJp6vQIgUueLFXv/eZ1ekgz2Oi67MNCk5jeTF2BurZqNLR3MSmUCIFT3Q6uHMtsB9Eha4u7hS31tj1UWE+D+ADzp59MGnoftAiBeHT7gDMuqeJHPL4b+kC+gzV4FGTfhR9q3tTbklZkD2A==MIIBUwIBADANBgkqhkiG9w0BAQEFAASCAT0wggE5AgEAAkEA0vfvyTdGJkdbHkB8mp0f3FE0GYP3AYPaJF7jUd1M0XxFSE2ceK3k2kw20YvQ09NJKk+OMjWQl9WitG9pB6tSCQIDAQABAkA2SimBrWC2/wvauBuYqjCFwLvYiRYqZKThUS3MZlebXJiLB+Ue/gUifAAKIg1avttUZsHBHrop4qfJCwAI0+YRAiEA+W3NK/RaXtnRqmoUUkb59zsZUBLpvZgQPfj1MhyHDz0CIQDYhsAhPJ3mgS64NbUZmGWuuNKp5coY2GIj/zYDMJp6vQIgUueLFXv/eZ1ekgz2Oi67MNCk5jeTF2BurZqNLR3MSmUCIFT3Q6uHMtsB9Eha4u7hS31tj1UWE+D+ADzp59MGnoftAiBeHT7gDMuqeJHPL4b+kC+gzV4FGTfhR9q3tTbklZkD2A==
+
+single:
+  login: false
+
+# 文件存储路径
+#file:
+#  path: C:\com-shopping\file\
+#  avatar: C:\com-shopping\avatar\
+#  # 文件大小 单位M
+#  maxSize: 100
+#  avatarMaxSize: 5
+
+#日志级别
+logback:
+  loglevel: DEBUG

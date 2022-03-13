@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-aop" />
+        <module name="client-credentials-grant" />
+        <module name="springboot-security" />
+        <module name="springboot-message" />
+        <module name="springboot-properties" />
+        <module name="springboot-profile" />
+        <module name="first-spring-boot" />
+        <module name="springboot-configuration" />
+        <module name="springboot-scheduled-quartzbatch" />
+        <module name="springboot-mvc-fastjson" />
+        <module name="springboot-mybatis" />
+        <module name="springboot-dubbo-rest" />
+        <module name="springboot-staticview" />
+        <module name="springboot-data-mongodb" />
+        <module name="springboot-freemarker" />
+        <module name="springboot-lombok" />
+        <module name="springboot-errorview" />
+        <module name="springboot-scheduled-quartz" />
+        <module name="springboot-cache-ehcache" />
+        <module name="springboot-log4j2" />
+        <module name="springboot-fileupload" />
+        <module name="resource-owner-password-credentials-grant" />
+        <module name="springboot-h2database" />
+        <module name="springboot-data-rest" />
+        <module name="springboot-servlet" />
+        <module name="springboot-cache-redis" />
+        <module name="oauth2-sso-client-order" />
+        <module name="springboot-amqp" />
+        <module name="springboot-data-jdbc" />
+        <module name="springboot-artemis" />
+        <module name="springboot-batch" />
+        <module name="rocketmq-produce" />
+        <module name="springboot-controlleradvice" />
+        <module name="authorization-code" />
+        <module name="springboot-runner" />
+        <module name="oauth2-sso-server" />
+        <module name="springboot-application" />
+        <module name="springboot-hadoop-hbase" />
+        <module name="springboot-transaction" />
+        <module name="springboot-kafka" />
+        <module name="springboot-tomcat" />
+        <module name="springboot-thymeleaf" />
+        <module name="rocketmq-consumer" />
+        <module name="springboot-velocity" />
+        <module name="springboot-mvc" />
+        <module name="springboot-interceptor" />
+        <module name="implicit-grant" />
+        <module name="springboot-rocketmq" />
+        <module name="springboot-data-jpa" />
+        <module name="springboot-scheduled" />
+        <module name="oauth2-sso-client-product" />
+        <module name="springboot-multisource" />
+        <module name="springboot-undertow" />
+        <module name="springboot-jdbctemplate" />
+        <module name="springboot-swagger" />
+        <module name="springboot-data-redis" />
+        <module name="springboot-druid" />
+        <module name="springboot-jetty" />
+        <module name="springboot-cors" />
+        <module name="springboot-rabbitmq" />
+        <module name="springboot-hikaricp" />
+        <module name="springboot-logback" />
+        <module name="springboot-security-oauth" />
+        <module name="springboot-security-dynamic" />
+        <module name="springboot-activemq" />
+        <module name="springboot-cache" />
+        <module name="springboot-restdocs" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="authorization-code" target="1.8" />
+      <module name="client-credentials-grant" target="1.8" />
+      <module name="first-spring-boot" target="1.8" />
+      <module name="implicit-grant" target="1.8" />
+      <module name="oauth2-sso-client-order" target="1.8" />
+      <module name="oauth2-sso-client-product" target="1.8" />
+      <module name="oauth2-sso-server" target="1.8" />
+      <module name="resource-owner-password-credentials-grant" target="1.8" />
+      <module name="rocketmq-consumer" target="1.8" />
+      <module name="rocketmq-produce" target="1.8" />
+      <module name="springboot-activemq" target="1.8" />
+      <module name="springboot-amqp" target="1.8" />
+      <module name="springboot-aop" target="1.8" />
+      <module name="springboot-application" target="1.8" />
+      <module name="springboot-artemis" target="1.8" />
+      <module name="springboot-batch" target="1.8" />
+      <module name="springboot-cache" target="1.8" />
+      <module name="springboot-cache-ehcache" target="1.8" />
+      <module name="springboot-cache-redis" target="1.8" />
+      <module name="springboot-configuration" target="1.8" />
+      <module name="springboot-controlleradvice" target="1.8" />
+      <module name="springboot-cors" target="1.8" />
+      <module name="springboot-data-jdbc" target="1.8" />
+      <module name="springboot-data-jpa" target="1.8" />
+      <module name="springboot-data-mongodb" target="1.8" />
+      <module name="springboot-data-redis" target="1.8" />
+      <module name="springboot-data-rest" target="1.8" />
+      <module name="springboot-druid" target="1.8" />
+      <module name="springboot-dubbo-rest" target="1.8" />
+      <module name="springboot-errorview" target="1.8" />
+      <module name="springboot-fileupload" target="1.8" />
+      <module name="springboot-freemarker" target="1.8" />
+      <module name="springboot-h2database" target="1.8" />
+      <module name="springboot-hadoop-hbase" target="1.8" />
+      <module name="springboot-hikaricp" target="1.8" />
+      <module name="springboot-interceptor" target="1.8" />
+      <module name="springboot-jdbctemplate" target="1.8" />
+      <module name="springboot-jetty" target="1.8" />
+      <module name="springboot-kafka" target="1.8" />
+      <module name="springboot-log4j2" target="1.8" />
+      <module name="springboot-logback" target="1.8" />
+      <module name="springboot-lombok" target="1.8" />
+      <module name="springboot-message" target="1.8" />
+      <module name="springboot-multisource" target="1.8" />
+      <module name="springboot-mvc" target="1.8" />
+      <module name="springboot-mvc-fastjson" target="1.8" />
+      <module name="springboot-mybatis" target="1.8" />
+      <module name="springboot-profile" target="1.8" />
+      <module name="springboot-properties" target="1.8" />
+      <module name="springboot-rabbitmq" target="1.8" />
+      <module name="springboot-restdocs" target="1.8" />
+      <module name="springboot-rocketmq" target="1.8" />
+      <module name="springboot-runner" target="1.8" />
+      <module name="springboot-scheduled" target="1.8" />
+      <module name="springboot-scheduled-quartz" target="1.8" />
+      <module name="springboot-scheduled-quartzbatch" target="1.8" />
+      <module name="springboot-security" target="1.8" />
+      <module name="springboot-security-dynamic" target="1.8" />
+      <module name="springboot-security-oauth" target="1.8" />
+      <module name="springboot-servlet" target="1.8" />
+      <module name="springboot-staticview" target="1.8" />
+      <module name="springboot-swagger" target="1.8" />
+      <module name="springboot-thymeleaf" target="1.8" />
+      <module name="springboot-tomcat" target="1.8" />
+      <module name="springboot-transaction" target="1.8" />
+      <module name="springboot-undertow" target="1.8" />
+      <module name="springboot-velocity" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="authorization-code" options="-parameters" />
+      <module name="client-credentials-grant" options="-parameters" />
+      <module name="first-spring-boot" options="-parameters" />
+      <module name="implicit-grant" options="-parameters" />
+      <module name="oauth2-sso-client-order" options="-parameters" />
+      <module name="oauth2-sso-client-product" options="-parameters" />
+      <module name="oauth2-sso-server" options="-parameters" />
+      <module name="resource-owner-password-credentials-grant" options="-parameters" />
+      <module name="rocketmq-consumer" options="-parameters" />
+      <module name="rocketmq-produce" options="-parameters" />
+      <module name="springboot-activemq" options="-parameters" />
+      <module name="springboot-amqp" options="-parameters" />
+      <module name="springboot-aop" options="-parameters" />
+      <module name="springboot-application" options="-parameters" />
+      <module name="springboot-artemis" options="-parameters" />
+      <module name="springboot-batch" options="-parameters" />
+      <module name="springboot-cache" options="-parameters" />
+      <module name="springboot-cache-ehcache" options="-parameters" />
+      <module name="springboot-cache-redis" options="-parameters" />
+      <module name="springboot-configuration" options="-parameters" />
+      <module name="springboot-controlleradvice" options="-parameters" />
+      <module name="springboot-cors" options="-parameters" />
+      <module name="springboot-data-jdbc" options="-parameters" />
+      <module name="springboot-data-jpa" options="-parameters" />
+      <module name="springboot-data-mongodb" options="-parameters" />
+      <module name="springboot-data-redis" options="-parameters" />
+      <module name="springboot-data-rest" options="-parameters" />
+      <module name="springboot-druid" options="-parameters" />
+      <module name="springboot-dubbo-rest" options="-parameters" />
+      <module name="springboot-errorview" options="-parameters" />
+      <module name="springboot-fileupload" options="-parameters" />
+      <module name="springboot-freemarker" options="-parameters" />
+      <module name="springboot-h2database" options="-parameters" />
+      <module name="springboot-hadoop-hbase" options="-parameters" />
+      <module name="springboot-hikaricp" options="-parameters" />
+      <module name="springboot-interceptor" options="-parameters" />
+      <module name="springboot-jdbctemplate" options="-parameters" />
+      <module name="springboot-jetty" options="-parameters" />
+      <module name="springboot-kafka" options="-parameters" />
+      <module name="springboot-log4j2" options="-parameters" />
+      <module name="springboot-logback" options="-parameters" />
+      <module name="springboot-lombok" options="-parameters" />
+      <module name="springboot-message" options="-parameters" />
+      <module name="springboot-multisource" options="-parameters" />
+      <module name="springboot-mvc" options="-parameters" />
+      <module name="springboot-mvc-fastjson" options="-parameters" />
+      <module name="springboot-mybatis" options="-parameters" />
+      <module name="springboot-profile" options="-parameters" />
+      <module name="springboot-properties" options="-parameters" />
+      <module name="springboot-rabbitmq" options="-parameters" />
+      <module name="springboot-restdocs" options="-parameters" />
+      <module name="springboot-rocketmq" options="-parameters" />
+      <module name="springboot-runner" options="-parameters" />
+      <module name="springboot-scheduled" options="-parameters" />
+      <module name="springboot-scheduled-quartz" options="-parameters" />
+      <module name="springboot-scheduled-quartzbatch" options="-parameters" />
+      <module name="springboot-security" options="-parameters" />
+      <module name="springboot-security-dynamic" options="-parameters" />
+      <module name="springboot-security-oauth" options="-parameters" />
+      <module name="springboot-servlet" options="-parameters" />
+      <module name="springboot-staticview" options="-parameters" />
+      <module name="springboot-swagger" options="-parameters" />
+      <module name="springboot-thymeleaf" options="-parameters" />
+      <module name="springboot-tomcat" options="-parameters" />
+      <module name="springboot-transaction" options="-parameters" />
+      <module name="springboot-undertow" options="-parameters" />
+    </option>
+  </component>
+</project>

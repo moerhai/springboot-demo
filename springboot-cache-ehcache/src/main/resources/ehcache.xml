@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://www.ehcache.org/ehcache.xsd">
+    <!--
+        diskStore:表示缓存路径，ehcache分为内存和磁盘，此属性定义磁盘的缓存位置
+        user.home - 用户主目录
+        user.dir - 用户当前工作目录
+        java.io.tmpdir - 默认临时文件路径  在windows系统下 目录为 C:\Users\登录用户\AppData\Local\Temp\ehcache
+    -->
+    <!-- 指定磁盘缓存位置 -->
+    <diskStore path="java.io.tmpdir/ehcache" />
+
+    <!-- 默认缓存方式
+      maxElementsInMemory：缓存最大个数。
+      eternal：缓存对象是否永久有效，若设置为true，timeout将被忽略，element将永不失效。
+      timeToIdleSeconds：设置对象在失效前的允许闲置时间（单位：秒），也就是在对象消亡之前，两次访问时间的最大时间间隔。仅当eternal=false对象不是永久有效时使用，可选属性，默认值是0也就是可闲置时间无穷大。
+      timeToLiveSeconds：设置对象在失效前允许存活时间（单位：秒）， 也就是对象从构建到消亡的最大时间间隔。最大时间介于创建时间和失效时间之间。仅当eternal=false对象不是永久有效时使用，默认是0也就是对象存活时间无穷大。
+      overflowToDisk：当内存不足时，是否启用磁盘缓存。若为true，则当内存中对象数量达到 maxElementsInMemory 时，Ehcache将会把对象写到磁盘中。
+      ####以下可选属性####
+      maxElementsOnDisk：硬盘缓存中可以存放的最大缓存个数，默认为0，表示无穷大。
+      memoryStoreEvictionPolicy：内存存储与释放策略，当达到 maxElementsInMemory 限制时，Ehcache将会根据指定的策略去清理内存。默认策略是LRU（最近最少使用）。可以设置为FIFO（先进先出）或是LFU（较少使用）。
+      diskSpoolBufferSizeMB：这个参数设置DiskStore（磁盘缓存）的缓存区大小。默认是30MB。每个Cache都应该有自己的一个缓冲区。
+      clearOnFlush：内存数量最大时是否清除。
+      ####不常用属性####
+      overflowToOffHeap： 是否开启堆外缓存，只能用于企业版本中。
+      maxEntriesInCache： 指定缓存中允许存放元素的最大数量，只能用在Terracotta distributed caches.（分布式缓存）
+      maxBytesLocalDisk： 指定当前缓存能够使用的硬盘的最大字节数，其值可以是数字加单位，单位可以是K、M或者G，不区分大小写。
+      maxBytesLocalHeap： 指定当前缓存能够使用的堆内存的最大字节数，如果设置了这个属性，maxEntriesLocalHeap 将不能被使用。
+      copyOnRead：是否在读数据时取到的是Cache中对应元素的一个copy副本，而不是引用，默认false。
+      copyOnWrite：是否在写入数据时用的是原对象的一个copy副本，而不是引用，默认false。
+     -->
+    <!--
+      ####子标签元素####
+      persistence：表示Cache的持久化，它只有一个属性strategy，表示当前Cache对应的持久化策略。可选值有localTempSwap、localRestartable、none、distributed。
+     -->
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            maxElementsOnDisk="10000000"
+            overflowToDisk="false"
+            diskSpoolBufferSizeMB="30"
+            memoryStoreEvictionPolicy="LRU">
+        <persistence strategy="localTempSwap" />
+    </defaultCache>
+
+    <!--
+     name:缓存名称，对应@CachePut、@CacheEvict、@Cacheable中的cacheNames/value值。
+     diskPersistent：是否在VM重启时存储硬盘的缓存数据。默认值是false（ Whether the disk store persists between restarts of the Virtual Machine. The default value is false.）
+     maxEntriesLocalHeap：本地堆内存中缓存的最大对象数，默认为0，表示不限制。
+     maxEntriesLocalDisk：本地磁盘中保存的最大对象数，默认为0，表示不限制。
+     diskExpiryThreadIntervalSeconds：磁盘失效线程运行时间间隔，默认值为120秒。
+    -->
+    <!-- 测试用户缓存 -->
+    <cache name="testUserCache"
+           maxEntriesLocalHeap="10000"
+           eternal="false"
+           timeToIdleSeconds="3"
+           timeToLiveSeconds="3"
+           diskPersistent="true"
+           maxEntriesLocalDisk="10000000"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LRU">
+    </cache>
+</ehcache>

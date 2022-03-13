@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mohai.one.app.wares.dao.AppCategoryMapper">
+  <resultMap id="BaseResultMap" type="com.mohai.one.app.wares.domain.AppCategory">
+    <constructor>
+      <idArg column="cat_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="parent_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="cat_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cat_status" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="cat_sort" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="cat_icon" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cat_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cat_level" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="create_user" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="update_user" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    cat_id, parent_id, cat_name, cat_status, cat_sort, cat_icon, cat_pic, cat_level,
+    create_time, update_time, create_user, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from app_category
+    where cat_id = #{catId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from app_category
+    where cat_id = #{catId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mohai.one.app.wares.domain.AppCategory">
+    insert into app_category (cat_id, parent_id, cat_name,
+    cat_status, cat_sort, cat_icon,
+    cat_pic, cat_level, create_time,
+    update_time, create_user, update_user
+    )
+    values (#{catId,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{catName,jdbcType=VARCHAR},
+    #{catStatus,jdbcType=CHAR}, #{catSort,jdbcType=INTEGER}, #{catIcon,jdbcType=VARCHAR},
+    #{catPic,jdbcType=VARCHAR}, #{catLevel,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+    #{updateTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, #{updateUser,jdbcType=VARCHAR}
+    )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mohai.one.app.wares.domain.AppCategory">
+    insert into app_category
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="catId != null">
+        cat_id,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="catName != null">
+        cat_name,
+      </if>
+      <if test="catStatus != null">
+        cat_status,
+      </if>
+      <if test="catSort != null">
+        cat_sort,
+      </if>
+      <if test="catIcon != null">
+        cat_icon,
+      </if>
+      <if test="catPic != null">
+        cat_pic,
+      </if>
+      <if test="catLevel != null">
+        cat_level,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="catId != null">
+        #{catId,jdbcType=BIGINT},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="catName != null">
+        #{catName,jdbcType=VARCHAR},
+      </if>
+      <if test="catStatus != null">
+        #{catStatus,jdbcType=CHAR},
+      </if>
+      <if test="catSort != null">
+        #{catSort,jdbcType=INTEGER},
+      </if>
+      <if test="catIcon != null">
+        #{catIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="catPic != null">
+        #{catPic,jdbcType=VARCHAR},
+      </if>
+      <if test="catLevel != null">
+        #{catLevel,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mohai.one.app.wares.domain.AppCategory">
+    update app_category
+    <set>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="catName != null">
+        cat_name = #{catName,jdbcType=VARCHAR},
+      </if>
+      <if test="catStatus != null">
+        cat_status = #{catStatus,jdbcType=CHAR},
+      </if>
+      <if test="catSort != null">
+        cat_sort = #{catSort,jdbcType=INTEGER},
+      </if>
+      <if test="catIcon != null">
+        cat_icon = #{catIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="catPic != null">
+        cat_pic = #{catPic,jdbcType=VARCHAR},
+      </if>
+      <if test="catLevel != null">
+        cat_level = #{catLevel,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cat_id = #{catId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mohai.one.app.wares.domain.AppCategory">
+    update app_category
+    set parent_id = #{parentId,jdbcType=BIGINT},
+    cat_name = #{catName,jdbcType=VARCHAR},
+    cat_status = #{catStatus,jdbcType=CHAR},
+    cat_sort = #{catSort,jdbcType=INTEGER},
+    cat_icon = #{catIcon,jdbcType=VARCHAR},
+    cat_pic = #{catPic,jdbcType=VARCHAR},
+    cat_level = #{catLevel,jdbcType=INTEGER},
+    create_time = #{createTime,jdbcType=TIMESTAMP},
+    update_time = #{updateTime,jdbcType=TIMESTAMP},
+    create_user = #{createUser,jdbcType=VARCHAR},
+    update_user = #{updateUser,jdbcType=VARCHAR}
+    where cat_id = #{catId,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectListByParentId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from app_category
+    where parent_id = #{parentId} and cat_status = 1 order by cat_sort
+  </select>
+
+  <update id="updateCategoryStatus" parameterType="com.mohai.one.app.wares.domain.AppCategory">
+    update app_category
+    set cat_status = #{catStatus,jdbcType=CHAR},
+    update_time = #{updateTime,jdbcType=DATE},
+    update_user = #{updateUser,jdbcType=VARCHAR}
+    where cat_id = #{catId,jdbcType=BIGINT}
+  </update>
+
+</mapper>

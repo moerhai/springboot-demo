@@ -1,0 +1,9 @@
+<html>
+<body>
+亲爱的${toUserName}，您好！
+${message}
+
+            此致 敬上
+            ${fromUserName}
+</body>
+</html>

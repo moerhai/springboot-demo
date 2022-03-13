@@ -1,0 +1,56 @@
+spring:
+    datasource:
+        # 基本属性 url、user、password， type可以不写
+        # type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://127.0.0.1:3306/mohai_demo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
+        username: root
+        password: 123456
+        # 可自动跟据url识别驱动类名
+        # driver-class-name: com.mysql.cj.jdbc.Driver
+        # druid数据库连接池 以下参数可选都不是必须的
+        druid:
+            # 配置初始化大小、最小、最大
+            initial-size: 1 #初始化时建立物理连接的个数，默认为0，初始化发生在显示调用init方法，或者第一次getConnection时
+            min-idle: 1
+            max-active: 20
+            # 配置获取连接等待超时的时间 单位毫秒
+            max-wait: 60000
+            # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+            time-between-eviction-runsMillis: 2000
+            # 配置一个连接在池中最小生存的时间，单位是毫秒
+            min-evictable-idle-timeMillis: 600000
+            # 配置一个连接在池中最大生存的时间，单位是毫秒
+            max-evictable-idle-timeMillis: 900000
+            # 检测连接是否有效的sql，如果validationQuery为null，testOnBorrow、testOnReturn、testWhileIdle都不会起作用
+            validation-query: select 1
+            # 检测连接是否有效的超时时间，单位：秒
+            validation-query-timeout: 10
+            # 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
+            test-on-borrow: false
+            # 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
+            test-on-return: false
+            # 建议设为true，不影响性能，申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效
+            test-while-idle: true
+            # 连接池中的minIdle数量以内的连接，空闲时间超过minEvictableIdleTimeMillis，则会执行keepAlive操作
+            keep-alive: true
+            # 是否缓存preparedStatement，也就是PSCache
+            pool-prepared-statements: true
+            max-open-prepared-statements: 20 #和下面一条等价
+            # 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true
+            max-pool-prepared-statement-per-connection-size: 20
+            # 配置监控统计拦截的filters，配置多个英文逗号分隔
+            filters: stat,wall
+            # 通过connectProperties属性来打开mergeSql功能；慢SQL记录统计
+            connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+            # 配置合并多个DruidDataSource的监控数据
+            use-global-data-source-stat: true
+
+
+
+
+
+
+
+
+
+

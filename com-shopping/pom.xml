@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.6.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.mohai.one</groupId>
+	<artifactId>com-shopping</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>com-shopping</name>
+	<packaging>pom</packaging>
+	<description>网上商城</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<!--子模块-->
+	<modules>
+		<module>app-starter</module>
+		<module>app-core</module>
+		<module>app-wares</module>
+	</modules>
+
+	<!--依赖版本管理-->
+<!--	<dependencyManagement>-->
+<!--		<dependencies>-->
+<!--			<dependency>-->
+<!--				<groupId>org.mybatis.spring.boot</groupId>-->
+<!--				<artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--				<version>2.1.3</version>-->
+<!--			</dependency>-->
+<!--			<dependency>-->
+<!--				<groupId>com.github.pagehelper</groupId>-->
+<!--				<artifactId>pagehelper-spring-boot-starter</artifactId>-->
+<!--				<version>1.2.5</version>-->
+<!--			</dependency>-->
+<!--			<dependency>-->
+<!--				<groupId>com.alibaba</groupId>-->
+<!--				<artifactId>druid</artifactId>-->
+<!--				<version>1.1.22</version>-->
+<!--			</dependency>-->
+<!--			<dependency>-->
+<!--				<groupId>com.alibaba</groupId>-->
+<!--				<artifactId>fastjson</artifactId>-->
+<!--				<version>1.2.73</version>-->
+<!--			</dependency>-->
+<!--			<dependency>-->
+<!--				<groupId>io.springfox</groupId>-->
+<!--				<artifactId>springfox-swagger2</artifactId>-->
+<!--				<version>2.9.2</version>-->
+<!--			</dependency>-->
+<!--			<dependency>-->
+<!--				<groupId>io.springfox</groupId>-->
+<!--				<artifactId>springfox-swagger-ui</artifactId>-->
+<!--				<version>2.9.2</version>-->
+<!--			</dependency>-->
+<!--			<dependency>-->
+<!--				<groupId>io.swagger</groupId>-->
+<!--				<artifactId>swagger-models</artifactId>-->
+<!--				<version>1.5.21</version>-->
+<!--			</dependency>-->
+<!--			<dependency>-->
+<!--				<groupId>io.swagger</groupId>-->
+<!--				<artifactId>swagger-annotations</artifactId>-->
+<!--				<version>1.5.21</version>-->
+<!--			</dependency>-->
+<!--			<dependency>-->
+<!--				<groupId>cn.hutool</groupId>-->
+<!--				<artifactId>hutool-all</artifactId>-->
+<!--				<version>5.2.5</version>-->
+<!--			</dependency>-->
+<!--		</dependencies>-->
+<!--	</dependencyManagement>-->
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<!-- 健康监控 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- web 容器 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!--aop 切面-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<!-- redis依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<!-- spring 缓存 -->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-cache</artifactId>-->
+<!--		</dependency>-->
+		<!-- 消息队列 -->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-amqp</artifactId>-->
+<!--		</dependency>-->
+		<!--mysql-connector-java 驱动包-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- HikariCP 连接池依赖 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-hikaricp</artifactId>
+		</dependency>
+		<!-- mybatis-spring-boot-starter -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.1.3</version>
+		</dependency>
+		<!-- mybatis 分页插件 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+		<!-- druid 依赖 -->
+<!--		<dependency>-->
+<!--			<groupId>com.alibaba</groupId>-->
+<!--			<artifactId>druid</artifactId>-->
+<!--		</dependency>-->
+		<!-- fastjson 依赖 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.73</version>
+		</dependency>
+		<!--添加Swagger依赖 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<!--添加Swagger-UI依赖 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<!--解决Swagger 2.9.2版本NumberFormatException-->
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-models</artifactId>
+			<version>1.5.21</version>
+		</dependency>
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-annotations</artifactId>
+			<version>1.5.21</version>
+		</dependency>
+		<!-- hutool 工具包 -->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.2.5</version>
+		</dependency>
+		<!--commons-lang3 工具包-->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>com-shopping</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.7</version>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>8.0.20</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+
+	<developers>
+		<developer>
+			<id>com-shopping</id>
+			<name>mohai</name>
+			<email>moerhai@qq.com</email>
+			<url>https://github.com/witewater</url>
+		</developer>
+	</developers>
+
+</project>

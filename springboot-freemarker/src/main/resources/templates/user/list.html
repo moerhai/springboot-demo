@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta chaset="utf-8">
+</head>
+<body>
+<table border="1" align="center" width="50%">
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>age</td>
+    </tr>
+    <#list userList as user>
+        <tr>
+            <td>${user.id}</td>
+            <td>${user.realName}</td>
+            <td>${user.age}</td>
+        </tr>
+    </#list>
+</table>
+</body>
+</html>

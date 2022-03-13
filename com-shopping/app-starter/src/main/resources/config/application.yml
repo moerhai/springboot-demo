@@ -1,0 +1,86 @@
+# ===========================================
+# server properties
+# ===========================================
+server:
+  # 服务端口配置
+  port: 8088
+
+# ===========================================
+# spring properties
+# ===========================================
+spring:
+  profiles:
+    active: dev
+  application:
+    name: MH-SHOP
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      max-file-size: 100MB
+      max-request-size: 100MB
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+      INDENT_OUTPUT: true
+  messages:
+    basename: i18n/messages #指定国际化
+  thymeleaf:
+    mode: HTML
+  mvc:
+    favicon:
+      enabled: false
+
+# ===========================================
+# Mybatis properties
+# ===========================================
+mybatis:
+  mapper-locations: classpath*:mappers/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false # 是否开启二级缓存，默认false
+pagehelper:
+  helperDialect: mysql
+  reasonable: false  #分页合理化 设置true:如果pageNum<1会查询第一页，如果pageNum>pages会查询最后一页,设置false:如果pageNum<1或pageNum>pages会返回空数据
+
+# ===========================================
+# Swagger properties
+# ===========================================
+swagger:
+  enabled: true
+  base-package: com.mohai.one.app
+  title: ${spring.application.name}
+  version: 1.0.0-SNAPSHOT
+  description: ${spring.application.name}
+  # 全局统一鉴权配置
+  authorization:
+    key-name: SwaggerSessionID
+
+# ===================================
+#  JWT configuration
+# ===================================
+jwt:
+  token:
+    # JWT存储的请求头
+    header: Authorization
+    # JWT令牌前缀，从负载中拿到开头
+    token-start-with: Bearer
+    # 必须使用最少88位的Base64对该令牌进行编码
+    base64-secret: NDdjN2ZiOGJkNWJiNDYwNjhlMTZkYjY2YzJkODM5NmYwMzEzNDlmOTRiZGU0MjAzYTkyMTljZGFjNmJmNzMwNmEyOTBhMmY4NTYyNzRiMTBiZWVlYmI2OTc5YThmNTMxMTJiY2ZkMGU5NzhhNGNhZDkzNjRkZDRmZDUxZDc2NWI=
+    # JWT令牌过期时间,单位为毫秒,默认4小时(4*60*60*1000)
+    expiration: 14400000
+    # oauth2 相关前缀
+    oauth-prefix: 'MH:OAUTH:'
+    # 在线用户
+    online-key: 'MH:ONLINE:USER:'
+    # 验证码key
+    code-key: 'MH:CAPTCHA:'
+
+# ===========================================
+# app properties
+# ===========================================
+app:
+  crosfilter:
+    enable: true #跨域配置
+  access:
+    ignore-urls: /favicon.ico,/index,/swagger-resources/**,/allApi

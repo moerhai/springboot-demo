@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mohai_demo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+
+  # JPA配置
+  jpa:
+    # 数据库类型
+    database: mysql
+    # 切换默认的存储引擎切换为InnoDB
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    # 输出日志中打印出执行的SQL语句
+    show-sql: true
+    # 配置程序在启动的时候自动操作实体类对应的表
+    hibernate:
+      #create：程序重新启动时，都会重新创建表，会造成数据会丢失
+      #create-drop：每次运行程序时，会先创建表结构，然后待程序结束时清空表
+      #upadte：每次运行程序时，实体对应没有表时会创建表，如果实体发生改变会更新表结构，原来数据不会清空只会更新
+      #validate：每次运行程序时，会校验数据与数据库的字段类型是否相同
+      ddl-auto: update
+

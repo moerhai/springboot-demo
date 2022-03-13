@@ -1,0 +1,19 @@
+== 用 Spring REST Docs 构建API文档
+
+== 首页
+.Links
+include::{snippets}/index/links.adoc[]
+
+== 获取所有用户列表
+.request
+include::{snippets}/user-list/http-request.adoc[]
+
+.response
+include::{snippets}/user-list/http-response.adoc[]
+
+== 获取单个用户信息
+.request
+include::{snippets}/user-info/http-request.adoc[]
+
+.response
+include::{snippets}/user-info/http-response.adoc[]

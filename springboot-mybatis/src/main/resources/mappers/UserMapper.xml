@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace必须和接口类的类路径一样 (也就是全类名即是包名+接口类名).-->
+<mapper namespace="com.mohai.one.springbootmybatis.mapper.UserMapper">
+
+    <insert id="insert" parameterType="com.mohai.one.springbootmybatis.domain.User" useGeneratedKeys="true" keyProperty="id">
+        insert into user(id,name,age) values(#{id},#{name},#{age})
+    </insert>
+
+    <update id="update" parameterType="com.mohai.one.springbootmybatis.domain.User">
+        update user set name=#{name}, age=#{age} where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from user where id = #{id}
+    </delete>
+
+    <select id="getAllList" resultType="com.mohai.one.springbootmybatis.domain.User">
+        select * from user
+    </select>
+
+</mapper>

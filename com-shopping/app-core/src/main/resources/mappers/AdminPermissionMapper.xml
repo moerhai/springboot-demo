@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mohai.one.app.core.user.dao.AdminPermissionMapper">
+    <resultMap id="BaseResultMap" type="com.mohai.one.app.core.user.domain.AdminPermission">
+        <id property="permId" column="perm_id" jdbcType="BIGINT"/>
+        <result property="permCode" column="perm_code" jdbcType="VARCHAR"/>
+        <result property="permName" column="perm_name" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        perm_id, perm_code, perm_name
+    </sql>
+    <select id="selectPermListByUserId" resultMap="BaseResultMap">
+        select
+        ap.perm_id, ap.perm_code, ap.perm_name
+        from admin_permission ap
+        left join admin_role_permission rp on rp.perm_id = ap.perm_id
+        left join admin_user_role ur on ur.role_id = rp.role_id
+        where ur.user_id = #{userId,jdbcType=BIGINT}
+    </select>
+    <select id="selectPermListByPath" resultMap="BaseResultMap">
+        SELECT
+        ap.perm_id, ap.perm_code, ap.perm_name
+        FROM admin_permission ap
+        LEFT JOIN admin_role_permission rp ON rp.perm_id = ap.perm_id
+        LEFT JOIN admin_role_menu rm ON rm.role_id = rp.role_id
+        LEFT JOIN admin_menu am ON am.menu_id = rm.menu_id
+        WHERE am.menu_url = #{path}
+    </select>
+</mapper>
