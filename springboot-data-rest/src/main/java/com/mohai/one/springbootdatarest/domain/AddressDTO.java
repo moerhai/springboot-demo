@@ -14,7 +14,10 @@ public class AddressDTO {
     @GeneratedValue
     @Id
     private Long id;
-    private final String street, zipCode, city, state;
+    private String street, zipCode, city, state;
+
+    public AddressDTO() {
+    }
 
     public AddressDTO(String street, String zipCode, String city, String state) {
         this.street = street;
